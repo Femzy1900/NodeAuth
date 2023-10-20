@@ -17,6 +17,15 @@ app.get("/signup",(req, res) => {
     res.render("signup")
 })
 
+app.post("/signup", (req, res) => {
+    const data = {
+        name: req.body.name,
+        password:req.body.password
+    }
+
+    
+})
+
 app.listen(3000, () => {
     console.log("Port connected")
 })
