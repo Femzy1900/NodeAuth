@@ -25,6 +25,8 @@ app.post("/signup", async (req, res) => {
     }
 
      await LogInCollection.insertMany([data])
+
+     res.render("home")
     
 })
 
