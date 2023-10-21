@@ -1,24 +1,24 @@
-const mongoose = require("mongoose")
+const mongoose=require("mongoose")
 
-mongoose.connect("mongodb://localhost:27017/LoginAuth")
-.then(() => {
-    console.log("mongodb connected")
+mongoose.connect("mongodb://localhost:27017/LoginFormPractice")
+.then(()=>{
+    console.log('mongoose connected');
 })
-.catch(() => {
-    console.log("Failed to connect")
+.catch((e)=>{
+    console.log('failed');
 })
 
-const LoginSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
+const logInSchema=new mongoose.Schema({
+    name:{
+        type:String,
+        required:true
     },
-    password: {
-        type: String,
-        required: true
+    password:{
+        type:String,
+        required:true
     }
 })
 
-const collection = new mongoose.model("Collection1", LoginSchema)
+const LogInCollection=new mongoose.model('LogInCollection',logInSchema)
 
-module.exports = collection
+module.exports=LogInCollection

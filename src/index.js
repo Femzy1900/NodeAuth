@@ -2,7 +2,7 @@ const express =require("express")
 const app =express()
 const path =require("path")
 const hbs = require("hbs")
-const collection=require("./mongodb")
+const LogInCollection=require("./mongodb")
 
 const templatePath = path.join(__dirname, "../template")
 
@@ -18,13 +18,13 @@ app.get("/signup",(req, res) => {
     res.render("signup")
 })
 
-app.post("/signup", (req, res) => {
+app.post("/signup", async (req, res) => {
     const data = {
         name: req.body.name,
         password:req.body.password
     }
 
-    
+     await LogInCollection.insertMany([data])
     
 })
 
