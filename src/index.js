@@ -2,6 +2,7 @@ const express =require("express")
 const app =express()
 const path =require("path")
 const hbs = require("hbs")
+const collection=require("./mongodb")
 
 const templatePath = path.join(__dirname, "../template")
 
@@ -23,6 +24,7 @@ app.post("/signup", (req, res) => {
         password:req.body.password
     }
 
+    
     
 })
 
